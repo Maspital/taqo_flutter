@@ -1,0 +1,1 @@
+ /home/philipp/Repos/taqo_flutter/.dart_tool/flutter_build/f3397e2fc2bab93162608beec1956455/native_assets.yaml: 
