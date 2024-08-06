@@ -33,6 +33,12 @@ class _TaqosAppState extends State<TaqosApp> {
     });
   }
 
+  void handleColorSelect(int value) {
+    setState(() {
+      colorSelected = ColorSeed.values[value];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -47,7 +53,12 @@ class _TaqosAppState extends State<TaqosApp> {
         colorSchemeSeed: colorSelected.color,
         brightness: Brightness.dark,
       ),
-      home: const Home(),
+      home: Home(
+        useLightMode: useLightMode,
+        colorSelected: colorSelected,
+        handleBrightnessChange: handleBrightnessChange,
+        handleColorSelect: handleColorSelect,
+      ),
     );
   }
 }
