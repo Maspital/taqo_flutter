@@ -248,11 +248,20 @@ class _ExpandedTrailingActions extends StatelessWidget {
       ),
     );
 
-    return screenHeight > maxScrollingHeight
-        ? trailingActionsBody
-        : SingleChildScrollView(
-            child: trailingActionsBody,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxHeight > maxScrollingHeight) {
+          return trailingActionsBody;
+        } else {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: trailingActionsBody,
+            ),
           );
+        }
+      },
+    );
   }
 }
 

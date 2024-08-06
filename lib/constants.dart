@@ -8,7 +8,7 @@ const double largeWidthBreakpoint = 1500;
 const double navRailWidth = 250;
 const double maxColorSelectHeight = 200;
 
-const double maxScrollingHeight = 740;
+const double maxScrollingHeight = 500;
 
 enum ColorSeed {
   baseColor('FKIE', Color.fromARGB(255, 23, 156, 125)),
